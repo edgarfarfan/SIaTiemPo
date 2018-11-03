@@ -1,0 +1,2 @@
+class Serviceday < ApplicationRecord
+end
