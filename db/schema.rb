@@ -162,9 +162,10 @@ ActiveRecord::Schema.define(version: 20181103155816) do
     t.string   "last_name"
     t.string   "document"
     t.string   "email"
+    t.string   "password_digest"
     t.integer  "rol_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.index ["rol_id"], name: "index_users_on_rol_id"
   end
 
