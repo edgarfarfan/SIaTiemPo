@@ -1,6 +1,6 @@
 class StationController < ApplicationController
 
-respond_to :html, :xml, :json
+#respond_to :html, :xml, :json
 
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
@@ -36,6 +36,11 @@ respond_to :html, :xml, :json
     
     respond_with @station.destroy
   end
+   
+  
+  def consult
+     respond_with Station.limit(2)
+  end
 
   private
 
@@ -44,6 +49,6 @@ respond_to :html, :xml, :json
   end
 
   def station_params
-    params[:station].permit(:description, :adress, :long_degrees, :long_min, :long_seg, :long_coordinate, :lat_degrees, :lat_min, :lat_seg, :lat_coordinate)
+    params.permit(:description, :adress, :long_degrees, :long_min, :long_seg, :long_coordinate, :lat_degrees, :lat_min, :lat_seg, :lat_coordinate)
   end
 end

@@ -107,10 +107,22 @@ ActiveRecord::Schema.define(version: 20181103155816) do
     t.string   "description"
     t.boolean  "cyclic"
     t.integer  "time_route"
-    t.integer  "district_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["district_id"], name: "index_routes_on_district_id"
+  end
+
+  create_table "routes_stations", id: false, force: :cascade do |t|
+    t.integer "station_id"
+    t.integer "route_id"
+    t.index ["route_id"], name: "index_routes_stations_on_route_id"
+    t.index ["station_id"], name: "index_routes_stations_on_station_id"
+  end
+
+  create_table "routes_timetables", id: false, force: :cascade do |t|
+    t.integer "timetable_id"
+    t.integer "route_id"
+    t.index ["route_id"], name: "index_routes_timetables_on_route_id"
+    t.index ["timetable_id"], name: "index_routes_timetables_on_timetable_id"
   end
 
   create_table "servicedays", force: :cascade do |t|
@@ -134,13 +146,6 @@ ActiveRecord::Schema.define(version: 20181103155816) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "stations_routes", id: false, force: :cascade do |t|
-    t.integer "station_id"
-    t.integer "route_id"
-    t.index ["route_id"], name: "index_stations_routes_on_route_id"
-    t.index ["station_id"], name: "index_stations_routes_on_station_id"
-  end
-
   create_table "timetables", force: :cascade do |t|
     t.time     "hour_star"
     t.string   "hour_end"
@@ -148,13 +153,6 @@ ActiveRecord::Schema.define(version: 20181103155816) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["serviceday_id"], name: "index_timetables_on_serviceday_id"
-  end
-
-  create_table "timetables_routes", id: false, force: :cascade do |t|
-    t.integer "timetable_id"
-    t.integer "route_id"
-    t.index ["route_id"], name: "index_timetables_routes_on_route_id"
-    t.index ["timetable_id"], name: "index_timetables_routes_on_timetable_id"
   end
 
   create_table "users", force: :cascade do |t|
