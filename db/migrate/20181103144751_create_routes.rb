@@ -21,5 +21,5 @@ class CreateRoutes < ActiveRecord::Migration[5.0]
           t.belongs_to :route, index: true
      end
      
-  end
+    end
 end

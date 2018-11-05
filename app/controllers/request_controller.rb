@@ -1,5 +1,5 @@
 class RequestController < ApplicationController
- respond_to :html, :xml, :json
+ #respond_to :html, :xml, :json
 
     before_action :set_request, only: [:show, :edit, :update, :destroy]
     
@@ -36,6 +36,6 @@ class RequestController < ApplicationController
      @request = Request.find(params[:id])
   end
   def request_params
-        params.permit(:description)
+        params.permit(:long_degrees, :long_min, :long_seg, :long_coordinate, :lat_degrees, :lat_min, :lat_seg, :lat_coordinate, :imac, :user_id, :route_id)
   end
 end

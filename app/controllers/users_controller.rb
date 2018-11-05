@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-respond_to :html, :xml, :json
+#respond_to :html, :xml, :json
 
-    before_action :set_accion, only: [:show, :edit, :update, :destroy]
+    before_action :set_user, only: [:show, :edit, :update, :destroy]
     
     def index 
         @users = User.all
@@ -11,6 +11,7 @@ respond_to :html, :xml, :json
     end
     
     def new
+    
         respond_with @user=User.new
      end
     
@@ -23,12 +24,12 @@ respond_to :html, :xml, :json
      def update
         @user.update(user_params)
         respond_with @user
-      end
-       def destroy
+     end
+     def destroy
           # Destroy returns the object (i.e. self); though I believe Mongoid returns a boolean - need to double check this
             @user.destroy
             respond_with @user.destroy
-  end
+     end
   
   private
   
@@ -36,6 +37,6 @@ respond_to :html, :xml, :json
      @user = User.find(params[:id])
   end
   def user_params
-        params.permit(:name, :last_name, :document, :email, :password_digest)
+        params.permit(:name, :last_name, :document, :email, :password, :rol_id)
   end
 end

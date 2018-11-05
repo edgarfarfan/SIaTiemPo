@@ -41,6 +41,10 @@ class RouteController < ApplicationController
         respond_with station.routes
      end
   
+    def consult_buses
+        route = Route.find(params[:id])
+        respond_with route.buses
+    end
   private
   
   def set_accion
