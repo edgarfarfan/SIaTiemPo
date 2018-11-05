@@ -1,6 +1,6 @@
 class BusController < ApplicationController
 
-  respond_to :html, :xml, :json
+  #respond_to :html, :xml, :json
 
   before_action :set_bus, only: [:show, :edit, :update, :destroy]
   
@@ -31,12 +31,20 @@ class BusController < ApplicationController
             respond_with @bus.destroy
   end
   
+  def add_route
+        route = Route.find(params[:route_id])
+        bus = Bus.find(params[:bus_id])
+        route.buses << bus
+        route.save
+        respond_with route.buses.split(5)
+  end
+  
   private
   
   def set_bus
      @bus = Bus.find(params[:id])
   end
   def bus_params
-        params[:bus].params.permit(:registration_tag, :capacity, :disability, :create_date, :dog_service )
+        params.permit(:registration_tag, :capacity, :disability, :create_date, :dog_service)
   end
 end
