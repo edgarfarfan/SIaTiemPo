@@ -1,5 +1,5 @@
 class MenuController < ApplicationController
-respond_to :html, :xml, :json
+#respond_to :html, :xml, :json
 
     before_action :set_menu, only: [:show, :edit, :update, :destroy]
     

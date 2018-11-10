@@ -1,5 +1,5 @@
 class OnlinerouteController < ApplicationController
-respond_to :html, :xml, :json
+# respond_to :html, :xml, :json
 
     before_action :set_accion, only: [:show, :edit, :update, :destroy]
     
