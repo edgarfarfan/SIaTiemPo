@@ -16,8 +16,8 @@ development:
  # database: db/development.sqlite3
   adapter:  postgis
   encoding: unicode
-  postgis_extension: postgis      # default is postgis
-  postgis_schema: public          # default is public
+ # postgis_extension: postgis      # default is postgis
+ # postgis_schema: public          # default is public
   schema_search_path: public,postgis
   database:  sitatiempo_development
   pool: 5
@@ -46,8 +46,8 @@ production:
 # database: db/production.sqlite3
   adapter: postgis
   encoding: unicode
-  postgis_extension: postgis      # default is postgis
-  postgis_schema: public          # default is public
+ # postgis_extension: postgis      # default is postgis
+ # postgis_schema: public          # default is public
   schema_search_path: public,postgis
   database:  sitatiempo
   pool: 5
