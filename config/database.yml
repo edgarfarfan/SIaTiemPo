@@ -4,7 +4,8 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-# default: &default
+
+
 #  adapter: sqlite3
 #  pool: 5
 #  timeout: 5000
@@ -14,8 +15,8 @@
 
 #  <<: *default
 # database: db/test.sqlite3
-
- base: &base
+# default: &default
+base: &base
      adapter: postgis
      encoding: utf8
      username: pxiekoxxqhwofu

@@ -42,6 +42,8 @@ end
 group :production do
   gem 'pg'
 end
+gem 'rgeo'
+gem 'rgeo-activerecord' 
 gem 'activerecord-postgis-adapter'
 gem 'rack-cors'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
