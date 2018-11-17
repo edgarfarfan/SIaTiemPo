@@ -18,23 +18,23 @@
  base: &base
      adapter: postgis
      encoding: utf8
-     username: adminsitp
-     password: *SiaTiempo
+     username: pxiekoxxqhwofu
+     password: 6d18bd780fd5d3debae597abd8a13225637969ec4cce1d618872c90a563ec47d
      schema_search_path: public,postgis
      timeout: 5000
      pool: 5
      
 
 development:
-     database: db_dev_SiaTiempo
+     database: d512fj478cfgvv
      <<: *base
 
   test:
-     database: db_test_SiaTiempo
+     database: d512fj478cfgvv
      <<: *base
 
   production:
-     database: db_prod_SiaTiempo
+     database: d512fj478cfgvv
      <<: *base
 
 
