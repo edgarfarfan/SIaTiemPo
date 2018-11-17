@@ -15,8 +15,7 @@
 
 #  <<: *default
 # database: db/test.sqlite3
-# default: &default
-base: &base
+default: &default
      adapter: postgis
      encoding: utf8
      username: pxiekoxxqhwofu
@@ -25,18 +24,21 @@ base: &base
      timeout: 5000
      pool: 5
      
+# base: &base
+    
+     
 
 development:
      database: d512fj478cfgvv
-     <<: *base
+     <<: *default
 
   test:
      database: d512fj478cfgvv
-     <<: *base
+     <<: *default
 
   production:
      database: d512fj478cfgvv
-     <<: *base
+     <<: *default
 
 
  
