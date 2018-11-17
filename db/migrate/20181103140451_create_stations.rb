@@ -5,7 +5,7 @@ class CreateStations < ActiveRecord::Migration[5.0]
       t.string :adress
       t.float :latitude
       t.float :longitude
-      t.geometry :geom
+      t.geometry :string
       t.timestamps
     end
   end

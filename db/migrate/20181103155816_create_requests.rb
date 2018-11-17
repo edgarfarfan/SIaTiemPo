@@ -3,7 +3,7 @@ class CreateRequests < ActiveRecord::Migration[5.0]
     create_table :requests do |t|
       t.float :latitude
       t.float :longitude
-      t.geometry :geom
+      t.geometry :string
       t.string :imac 
       t.belongs_to :user, index: true
       t.belongs_to :route, index: true
