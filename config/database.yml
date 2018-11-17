@@ -15,7 +15,13 @@
 
 #  <<: *default
 # database: db/test.sqlite3
-default: &default
+#default: &default
+     
+# base: &base
+    
+     
+
+development:
      adapter: postgis
      encoding: utf8
      username: pxiekoxxqhwofu
@@ -23,22 +29,28 @@ default: &default
      schema_search_path: public,postgis
      timeout: 5000
      pool: 5
-     
-# base: &base
+     database: d512fj478cfgvv
     
-     
 
-development:
+test:
+     adapter: postgis
+     encoding: utf8
+     username: pxiekoxxqhwofu
+     password: 6d18bd780fd5d3debae597abd8a13225637969ec4cce1d618872c90a563ec47d
+     schema_search_path: public,postgis
+     timeout: 5000
+     pool: 5
      database: d512fj478cfgvv
-     <<: *default
 
-  test:
+production:
+     adapter: postgis
+     encoding: utf8
+     username: pxiekoxxqhwofu
+     password: 6d18bd780fd5d3debae597abd8a13225637969ec4cce1d618872c90a563ec47d
+     schema_search_path: public,postgis
+     timeout: 5000
+     pool: 5
      database: d512fj478cfgvv
-     <<: *default
-
-  production:
-     database: d512fj478cfgvv
-     <<: *default
 
 
  
